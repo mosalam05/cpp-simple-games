@@ -55,8 +55,8 @@ struct Question
   char op;
 };
 
-/// Display the welcome screen
-void printWelcomeScreen()
+/// Display the welcome message
+void printWelcomeMessage()
 {
   cout << "\n===============================\n"
        << " WELCOME TO THE MATH TEST GAME "
@@ -64,7 +64,7 @@ void printWelcomeScreen()
 }
 
 /// Display available operations
-void printOperationsScreen()
+void printOperationsMenu()
 {
   cout << "\n\t  OPERATIONS  \t"
        << "\n-------------------------------\n"
@@ -78,7 +78,7 @@ void printOperationsScreen()
 }
 
 /// Display difficulty options
-void printDifficultyScreen()
+void printDifficultyMenu()
 {
   cout << "\n\tDIFFICULTY LEVEL\t"
        << "\n-------------------------------\n"
@@ -90,7 +90,7 @@ void printDifficultyScreen()
 }
 
 /// Ask user for number of questions
-void printNumberOfQuestionsScreen()
+void printNumberOfQuestionsMenu()
 {
   cout << "\nChoose Number of Questions: ";
 }
@@ -212,15 +212,15 @@ void printResults(const GameDetails &game)
 void playGame()
 {
   GameDetails game;
-  printWelcomeScreen();
+  printWelcomeMessage();
 
-  printOperationsScreen();
+  printOperationsMenu();
   game.operation = (Operation)getValidInteger(1, 5);
 
-  printDifficultyScreen();
+  printDifficultyMenu();
   game.difficulty = (Difficulty)getValidInteger(1, 3);
 
-  printNumberOfQuestionsScreen();
+  printNumberOfQuestionsMenu();
   game.totalQuestions = getValidInteger(1);
 
   game.setLimits();
